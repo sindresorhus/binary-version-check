@@ -1,0 +1,46 @@
+{
+  "name": "bin-version-check",
+  "version": "0.0.0",
+  "description": "Check whether a binary version satisfies a semver range",
+  "license": "MIT",
+  "repository": "sindresorhus/bin-version-check",
+  "bin": {
+    "bin-version-check": "cli.js"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "http://sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "keywords": [
+    "cli",
+    "bin",
+    "binary",
+    "executable",
+    "version",
+    "semver",
+    "semantic",
+    "range",
+    "satisfy",
+    "check",
+    "validate"
+  ],
+  "dependencies": {
+    "bin-version": "^0.1.0",
+    "minimist": "^0.1.0",
+    "semver": "^2.3.0"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  }
+}
