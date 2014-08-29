@@ -6,18 +6,19 @@ var binVersionCheck = require('./');
 
 function help() {
 	console.log([
-		pkg.description,
 		'',
-		'Usage',
-		'  $ bin-version-check <binary> <semver-range>',
+		'  ' + pkg.description,
 		'',
-		'Example',
-		'  $ curl --version',
-		'  curl 7.30.0 (x86_64-apple-darwin13.0)',
-		'  $ bin-version-check curl \'>=8\'',
-		'  curl 7.30.0 does not satisfy the version requirement of >=8',
+		'  Usage',
+		'    bin-version-check <binary> <semver-range>',
 		'',
-		'Exits with code 0 if the semver range is satisfied and 1 if not'
+		'  Example',
+		'    $ curl --version',
+		'    curl 7.30.0 (x86_64-apple-darwin13.0)',
+		'    $ bin-version-check curl \'>=8\'',
+		'    curl 7.30.0 does not satisfy the version requirement of >=8',
+		'',
+		'  Exits with code 0 if the semver range is satisfied and 1 if not'
 	].join('\n'));
 }
 

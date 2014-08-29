@@ -40,16 +40,16 @@ $ npm install --global bin-version-check
 ```
 $ bin-version-check --help
 
-Usage
-  $ bin-version-check <binary> <semver-range>
+  Usage
+    bin-version-check <binary> <semver-range>
 
-Example
-  $ curl --version
-  curl 7.30.0 (x86_64-apple-darwin13.0)
-  $ bin-version-check curl '>=8'
-  curl 7.30.0 does not satisfy the version requirement of >=8
+  Example
+    $ curl --version
+    curl 7.30.0 (x86_64-apple-darwin13.0)
+    $ bin-version-check curl '>=8'
+    curl 7.30.0 does not satisfy the version requirement of >=8
 
-Exits with code 0 if the semver range is satisfied and 1 if not
+  Exits with code 0 if the semver range is satisfied and 1 if not
 ```
 
 
