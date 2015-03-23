@@ -41,7 +41,7 @@ $ npm install --global bin-version-check
 $ bin-version-check --help
 
   Usage
-    bin-version-check <binary> <semver-range>
+    $ bin-version-check <binary> <semver-range>
 
   Example
     $ curl --version
