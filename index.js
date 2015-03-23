@@ -9,18 +9,21 @@ module.exports = function (bin, versionRange, cb) {
 	}
 
 	if (!semver.validRange(versionRange)) {
-		return cb(new Error('Invalid version range'));
+		cb(new Error('Invalid version range'));
+		return;
 	}
 
 	binVersion(bin, function (err, binVersion) {
 		if (err) {
-			return cb(err);
+			cb(err);
+			return;
 		}
 
 		if (!semver.satisfies(semverTruncate(binVersion, 'patch'), versionRange)) {
 			err = new Error(bin + ' ' + binVersion + ' does not satisfy the version requirement of ' + versionRange);
 			err.name = 'InvalidBinVersion';
-			return cb(err);
+			cb(err);
+			return;
 		}
 
 		cb();

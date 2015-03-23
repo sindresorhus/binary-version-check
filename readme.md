@@ -7,14 +7,14 @@ Useful when you have a thing that only works with specific versions of a binary.
 
 ## Install
 
-```sh
+```
 $ npm install --save bin-version-check
 ```
 
 
 ## Usage
 
-```sh
+```
 $ curl --version
 curl 7.30.0 (x86_64-apple-darwin13.0)
 ```
@@ -33,7 +33,7 @@ binVersionCheck('curl', '>=8', function (err) {
 
 ## CLI
 
-```sh
+```
 $ npm install --global bin-version-check
 ```
 
