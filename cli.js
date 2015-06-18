@@ -15,7 +15,7 @@ var cli = meow({
 		'  curl 7.30.0 does not satisfy the version requirement of >=8',
 		'',
 		'  Exits with code 0 if the semver range is satisfied and 1 if not'
-	].join('\n')
+	]
 });
 
 if (cli.input.length === 0) {
