@@ -20,12 +20,12 @@ curl 7.30.0 (x86_64-apple-darwin13.0)
 ```
 
 ```js
-var binVersionCheck = require('bin-version-check');
+const binVersionCheck = require('bin-version-check');
 
-binVersionCheck('curl', '>=8', function (err) {
+binVersionCheck('curl', '>=8', err => {
 	if (err) {
 		throw err;
-		//=> InvalidBinVersion: curl 7.30.0 does not satisfy the version requirement of >=8
+		//=> 'InvalidBinVersion: curl 7.30.0 does not satisfy the version requirement of >=8'
 	}
 });
 ```
