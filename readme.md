@@ -29,6 +29,32 @@ binVersionCheck('curl', '>=8').catch(err => {
 ```
 
 
+## API
+
+### binVersionCheck(binary, semverRange, [options])
+
+#### binary
+
+Type: `string`
+
+Name or path of the binary to check.
+
+#### semverRange
+
+Type: `string`
+
+[Semver range](https://github.com/npm/node-semver#ranges) to check against.
+
+#### options
+
+##### args
+
+Type: `array`  
+Default: `['--version']`
+
+CLI arguments used to get the binary version.
+
+
 ## Related
 
 - [bin-version-check-cli](https://github.com/sindresorhus/bin-version-check-cli) - CLI for this module
