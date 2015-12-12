@@ -1,6 +1,6 @@
 # bin-version-check [![Build Status](https://travis-ci.org/sindresorhus/bin-version-check.svg?branch=master)](https://travis-ci.org/sindresorhus/bin-version-check)
 
-> Check whether a binary version satisfies a [semver range](https://github.com/isaacs/node-semver#ranges)
+> Check whether a binary version satisfies a [semver range](https://github.com/npm/node-semver#ranges)
 
 Useful when you have a thing that only works with specific versions of a binary.
 
@@ -22,35 +22,16 @@ curl 7.30.0 (x86_64-apple-darwin13.0)
 ```js
 const binVersionCheck = require('bin-version-check');
 
-binVersionCheck('curl', '>=8', err => {
-	if (err) {
+binVersionCheck('curl', '>=8').catch(err => {
 		throw err;
-		//=> 'InvalidBinVersion: curl 7.30.0 does not satisfy the version requirement of >=8'
-	}
+		//=> 'InvalidBinVersion: curl 7.30.0 doesn't satisfy the version requirement of >=8'
 });
 ```
 
 
-## CLI
+## Related
 
-```
-$ npm install --global bin-version-check
-```
-
-```
-$ bin-version-check --help
-
-  Usage
-    $ bin-version-check <binary> <semver-range>
-
-  Example
-    $ curl --version
-    curl 7.30.0 (x86_64-apple-darwin13.0)
-    $ bin-version-check curl '>=8'
-    curl 7.30.0 does not satisfy the version requirement of >=8
-
-  Exits with code 0 if the semver range is satisfied and 1 if not
-```
+- [bin-version-check-cli](https://github.com/sindresorhus/bin-version-check-cli) - CLI for this module
 
 
 ## License

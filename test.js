@@ -1,18 +1,14 @@
-'use strict';
-var assert = require('assert');
-var binVersionCheck = require('./');
+import test from 'ava';
+import fn from './';
 
-it('should return an error on when the range does not satisfiy the bin version', function (cb) {
-	binVersionCheck('curl', '1.29.0', function (err) {
-		console.log(err);
-		assert.equal(err.name, 'InvalidBinVersion');
-		cb();
-	});
+test('error when the range does not satisfy the bin version', async t => {
+	try {
+		await fn('curl', '1.29.0');
+	} catch (err) {
+		t.is(err.name, 'InvalidBinVersion');
+	}
 });
 
-it('should not return an error on when the range satisfies the bin version', function (cb) {
-	binVersionCheck('curl', '>=1', function (err) {
-		assert(!err, err);
-		cb();
-	});
+test('no error when the range satisfies the bin version', async t => {
+	await t.doesNotThrow(fn('curl', '>=1'));
 });

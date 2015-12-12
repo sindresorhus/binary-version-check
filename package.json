@@ -9,19 +9,16 @@
     "email": "sindresorhus@gmail.com",
     "url": "sindresorhus.com"
   },
-  "bin": "cli.js",
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=4"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "xo && ava"
   },
   "files": [
-    "index.js",
-    "cli.js"
+    "index.js"
   ],
   "keywords": [
-    "cli-app",
     "cli",
     "bin",
     "binary",
@@ -35,12 +32,15 @@
     "validate"
   ],
   "dependencies": {
-    "bin-version": "^1.0.0",
-    "meow": "^3.3.0",
-    "semver": "^4.0.3",
+    "bin-version": "^2.0.0",
+    "semver": "^5.1.0",
     "semver-truncate": "^1.0.0"
   },
   "devDependencies": {
-    "mocha": "*"
+    "ava": "*",
+    "xo": "*"
+  },
+  "xo": {
+    "esnext": true
   }
 }

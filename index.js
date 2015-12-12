@@ -1,31 +1,24 @@
 'use strict';
-var semver = require('semver');
-var binVersion = require('bin-version');
-var semverTruncate = require('semver-truncate');
+const semver = require('semver');
+const binVersion = require('bin-version');
+const semverTruncate = require('semver-truncate');
 
-module.exports = function (bin, versionRange, cb) {
+module.exports = (bin, versionRange, opts) => {
 	if (typeof bin !== 'string' || typeof versionRange !== 'string') {
-		throw new Error('`binary` and `versionRange` required');
+		return Promise.reject('`binary` and `versionRange` required');
 	}
 
 	if (!semver.validRange(versionRange)) {
-		cb(new Error('Invalid version range'));
-		return;
+		return Promise.reject(new Error('Invalid version range'));
 	}
 
-	binVersion(bin, function (err, binVersion) {
-		if (err) {
-			cb(err);
-			return;
-		}
+	opts = opts || {};
 
+	return binVersion(bin).then(binVersion => {
 		if (!semver.satisfies(semverTruncate(binVersion, 'patch'), versionRange)) {
-			err = new Error(bin + ' ' + binVersion + ' does not satisfy the version requirement of ' + versionRange);
+			const err = new Error(`${bin} ${binVersion} doesn't satisfy the version requirement of ${versionRange}`);
 			err.name = 'InvalidBinVersion';
-			cb(err);
-			return;
+			throw err;
 		}
-
-		cb();
 	});
 };
