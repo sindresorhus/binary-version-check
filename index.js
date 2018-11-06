@@ -15,7 +15,7 @@ module.exports = (binary, semverRange, options) => {
 	return binVersion(binary, options).then(binaryVersion => {
 		if (!semver.satisfies(semverTruncate(binaryVersion, 'patch'), semverRange)) {
 			const error = new Error(`${binary} ${binaryVersion} doesn't satisfy the version requirement of ${semverRange}`);
-			error.name = 'InvalidBinVersion';
+			error.name = 'InvalidBinaryVersion';
 			throw error;
 		}
 	});

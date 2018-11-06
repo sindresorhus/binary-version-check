@@ -3,7 +3,7 @@ import binVersionCheck from '.';
 
 test('error when the range does not satisfy the bin version', async t => {
 	await t.throwsAsync(binVersionCheck('curl', '1.29.0'), {
-		name: 'InvalidBinVersion'
+		name: 'InvalidBinaryVersion'
 	});
 });
 
