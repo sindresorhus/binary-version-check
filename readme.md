@@ -8,7 +8,7 @@ Useful when you have a thing that only works with specific versions of a binary.
 ## Install
 
 ```
-$ npm install --save bin-version-check
+$ npm install bin-version-check
 ```
 
 
@@ -22,10 +22,14 @@ curl 7.30.0 (x86_64-apple-darwin13.0)
 ```js
 const binVersionCheck = require('bin-version-check');
 
-binVersionCheck('curl', '>=8').catch(err => {
-		throw err;
+(async () => {
+	try {
+		await binVersionCheck('curl', '>=8');
+	} catch (error) {
+		console.log(error);
 		//=> 'InvalidBinVersion: curl 7.30.0 doesn't satisfy the version requirement of >=8'
-});
+	}
+})();
 ```
 
 
@@ -47,9 +51,11 @@ Type: `string`
 
 #### options
 
+Type: `Object`
+
 ##### args
 
-Type: `array`  
+Type: `string[]`
 Default: `['--version']`
 
 CLI arguments used to get the binary version.
@@ -62,4 +68,4 @@ CLI arguments used to get the binary version.
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)

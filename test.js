@@ -1,14 +1,12 @@
 import test from 'ava';
-import m from './';
+import binVersionCheck from '.';
 
 test('error when the range does not satisfy the bin version', async t => {
-	try {
-		await m('curl', '1.29.0');
-	} catch (err) {
-		t.is(err.name, 'InvalidBinVersion');
-	}
+	await t.throwsAsync(binVersionCheck('curl', '1.29.0'), {
+		name: 'InvalidBinVersion'
+	});
 });
 
 test('no error when the range satisfies the bin version', async t => {
-	await t.notThrows(m('curl', '>=1'));
+	await t.notThrowsAsync(binVersionCheck('curl', '>=1'));
 });
