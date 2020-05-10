@@ -27,7 +27,7 @@ const binVersionCheck = require('bin-version-check');
 		await binVersionCheck('curl', '>=8');
 	} catch (error) {
 		console.log(error);
-		//=> 'InvalidBinVersion: curl 7.30.0 doesn't satisfy the version requirement of >=8'
+		//=> 'InvalidBinaryVersion: curl 7.30.0 doesn't satisfy the version requirement of >=8'
 	}
 })();
 ```
