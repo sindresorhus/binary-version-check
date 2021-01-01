@@ -1,4 +1,4 @@
-# bin-version-check [![Build Status](https://travis-ci.org/sindresorhus/bin-version-check.svg?branch=master)](https://travis-ci.org/sindresorhus/bin-version-check)
+# bin-version-check
 
 > Check whether a binary version satisfies a [semver range](https://github.com/npm/node-semver#ranges)
 
