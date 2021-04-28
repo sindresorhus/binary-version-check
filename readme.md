@@ -4,13 +4,11 @@
 
 Useful when you have a thing that only works with specific versions of a binary.
 
-
 ## Install
 
 ```
 $ npm install bin-version-check
 ```
-
 
 ## Usage
 
@@ -20,22 +18,19 @@ curl 7.30.0 (x86_64-apple-darwin13.0)
 ```
 
 ```js
-const binVersionCheck = require('bin-version-check');
+import binaryVersionCheck from 'bin-version-check';
 
-(async () => {
-	try {
-		await binVersionCheck('curl', '>=8');
-	} catch (error) {
-		console.log(error);
-		//=> 'InvalidBinaryVersion: curl 7.30.0 doesn't satisfy the version requirement of >=8'
-	}
-})();
+try {
+	await binaryVersionCheck('curl', '>=8');
+} catch (error) {
+	console.log(error);
+	//=> 'InvalidBinaryVersion: curl 7.30.0 doesn't satisfy the version requirement of >=8'
+}
 ```
-
 
 ## API
 
-### binVersionCheck(binary, semverRange, [options])
+### binaryVersionCheck(binary, semverRange, options?)
 
 #### binary
 
@@ -51,21 +46,15 @@ Type: `string`
 
 #### options
 
-Type: `Object`
+Type: `object`
 
 ##### args
 
-Type: `string[]`
+Type: `string[]`\
 Default: `['--version']`
 
 CLI arguments used to get the binary version.
 
-
 ## Related
 
 - [bin-version-check-cli](https://github.com/sindresorhus/bin-version-check-cli) - CLI for this module
-
-
-## License
-
-MIT © [Sindre Sorhus](https://sindresorhus.com)
