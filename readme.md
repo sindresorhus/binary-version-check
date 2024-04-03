@@ -6,13 +6,13 @@ Useful when you have a thing that only works with specific versions of a binary.
 
 ## Install
 
-```
-$ npm install bin-version-check
+```sh
+npm install bin-version-check
 ```
 
 ## Usage
 
-```
+```console
 $ curl --version
 curl 7.30.0 (x86_64-apple-darwin13.0)
 ```

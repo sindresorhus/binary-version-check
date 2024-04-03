@@ -12,8 +12,9 @@
 	},
 	"type": "module",
 	"exports": "./index.js",
+	"sideEffects": false,
 	"engines": {
-		"node": ">=12"
+		"node": ">=18"
 	},
 	"scripts": {
 		"test": "xo && ava"
@@ -34,12 +35,12 @@
 		"validate"
 	],
 	"dependencies": {
-		"bin-version": "^6.0.0",
-		"semver": "^7.5.3",
+		"binary-version": "^7.1.0",
+		"semver": "^7.6.0",
 		"semver-truncate": "^3.0.0"
 	},
 	"devDependencies": {
-		"ava": "^4.3.3",
-		"xo": "^0.45.0"
+		"ava": "^6.1.2",
+		"xo": "^0.58.0"
 	}
 }
