@@ -1,6 +1,6 @@
 {
 	"name": "binary-version-check",
-	"version": "6.0.0",
+	"version": "6.1.0",
 	"description": "Check whether a binary version satisfies a semver range",
 	"license": "MIT",
 	"repository": "sindresorhus/binary-version-check",
