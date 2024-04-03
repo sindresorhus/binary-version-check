@@ -1,4 +1,4 @@
-# bin-version-check
+# binary-version-check
 
 > Check whether a binary version satisfies a [semver range](https://github.com/npm/node-semver#ranges)
 
@@ -7,7 +7,7 @@ Useful when you have a thing that only works with specific versions of a binary.
 ## Install
 
 ```sh
-npm install bin-version-check
+npm install binary-version-check
 ```
 
 ## Usage
@@ -18,7 +18,7 @@ curl 7.30.0 (x86_64-apple-darwin13.0)
 ```
 
 ```js
-import binaryVersionCheck from 'bin-version-check';
+import binaryVersionCheck from 'binary-version-check';
 
 try {
 	await binaryVersionCheck('curl', '>=8');
@@ -36,13 +36,13 @@ try {
 
 Type: `string`
 
-Name or path of the binary to check.
+The name or path of the binary to check.
 
 #### semverRange
 
 Type: `string`
 
-[Semver range](https://github.com/npm/node-semver#ranges) to check against.
+The [semver range](https://github.com/npm/node-semver#ranges) to check against.
 
 #### options
 
@@ -53,8 +53,8 @@ Type: `object`
 Type: `string[]`\
 Default: `['--version']`
 
-CLI arguments used to get the binary version.
+The CLI arguments used to get the binary version.
 
 ## Related
 
-- [bin-version-check-cli](https://github.com/sindresorhus/bin-version-check-cli) - CLI for this module
+- [binary-version-check-cli](https://github.com/sindresorhus/binary-version-check-cli) - CLI for this package

@@ -1,9 +1,9 @@
 {
-	"name": "bin-version-check",
+	"name": "binary-version-check",
 	"version": "6.0.0",
 	"description": "Check whether a binary version satisfies a semver range",
 	"license": "MIT",
-	"repository": "sindresorhus/bin-version-check",
+	"repository": "sindresorhus/binary-version-check",
 	"funding": "https://github.com/sponsors/sindresorhus",
 	"author": {
 		"name": "Sindre Sorhus",
